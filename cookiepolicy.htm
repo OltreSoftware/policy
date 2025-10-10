@@ -3,86 +3,68 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Informativa Privacy (siti web)</title>
+  <title>Cookie Policy (siti web)</title>
   <style>
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.55;margin:2rem;max-width:900px}
     h1,h2,h3{line-height:1.25}
     .muted{color:#555}
     .hidden{display:none}
     a{color:#0b57d0}
+    code{background:#f6f8fa;padding:.15rem .3rem;border-radius:4px}
   </style>
 
   <script>
-    // CONFIGURAZIONE SEMPLICE PER TUTTI I SITI
-    // Imposta a false se il sito NON usa Analytics
+    // Stessa logica della privacy: abilita/disabilita blocchi in base alle esigenze
     const SITE = {
-      controller: "Oltre Software (Italia)",
-      email: "privacy@oltresoftware.com",
-      ga: true,                 // true = mostra blocco Analytics; false = nascondi
-      lastUpdated: "2025-09-01" // aggiorna la data quando modifichi il testo
+      ga: true,                 // imposta a false se NON usi Google Analytics su quel sito
+      lastUpdated: "2025-09-01" // aggiorna quando modifichi il testo
     };
 
     document.addEventListener("DOMContentLoaded", () => {
       const host = location.hostname;
-
-      // Sostituzioni rapide
       document.querySelectorAll("[data-site=domain]").forEach(el => el.textContent = host);
-      document.querySelectorAll("[data-site=email]").forEach(el => el.textContent = SITE.email);
-      document.querySelectorAll("[data-site=controller]").forEach(el => el.textContent = SITE.controller);
       document.querySelectorAll("[data-site=updated]").forEach(el => el.textContent = SITE.lastUpdated);
-
-      // Mostra/Nascondi il blocco Analytics in base alla config
-      if (!SITE.ga) document.querySelectorAll(".analytics-block").forEach(el => el.classList.add("hidden"));
+      if (!SITE.ga) document.querySelectorAll(".ga-block").forEach(el => el.classList.add("hidden"));
     });
   </script>
 </head>
 <body>
   <header>
-    <h1>Informativa Privacy (siti web)</h1>
+    <h1>Cookie Policy (siti web)</h1>
     <p class="muted">Ultimo aggiornamento: <span data-site="updated"></span></p>
   </header>
 
-  <section>
-    <p>La presente informativa descrive come trattiamo i dati personali in relazione a questo sito web (<strong><span data-site="domain"></span></strong>) e ad altri nostri siti eventualmente collegati alla presente informativa.</p>
-  </section>
+  <p>Questa Cookie Policy spiega come utilizziamo cookie e tecnologie simili su questo sito web (<strong><span data-site="domain"></span></strong>).</p>
 
-  <h2>Titolare del trattamento</h2>
-  <p><strong><span data-site="controller"></span></strong> — Contatto: <a href="mailto:privacy@oltresoftware.com" data-site="email">privacy@oltresoftware.com</a></p>
+  <h2>Cosa sono i cookie</h2>
+  <p>I cookie sono piccoli file di testo che un sito invia al tuo dispositivo per memorizzare informazioni recuperabili successivamente, ad esempio per far funzionare il sito, migliorarne le prestazioni o generare statistiche aggregate.</p>
 
-</h2>
+  <h2>Tipologie di cookie che possiamo utilizzare</h2>
   <ul>
-    <li><strong>Dati di navigazione e log</strong> (es. indirizzo IP, user agent, data/ora, pagine visitate) generati dal server per sicurezza e funzionamento.</li>
-    <li class="analytics-block"><strong>Dati di analytics</strong> (se abilitati): informazioni aggregate sulle visite e sull’uso del sito; possono impiegare cookie/ID dispositivo. Vedi “Cookie e analytics”.</li>
-    <li><strong>Comunicazioni</strong>: contenuti dei messaggi che ci invii (es. email o moduli esterni).</li>
+    <li><strong>Cookie tecnici/necessari</strong>: servono al funzionamento di base del sito (es. sicurezza, preferenze essenziali).</li>
+    <li class="ga-block"><strong>Cookie di analytics (previo consenso)</strong>: misurano visite e performance in forma aggregata.</li>
+    <li><strong>Altri cookie di terze parti</strong>: possono essere presenti se incorpori contenuti esterni (es. video, mappe). In tal caso il banner ne gestisce il consenso.</li>
   </ul>
 
-  <h2>Finalità e basi giuridiche</h2>
+  <div class="ga-block">
+    <h3>Esempio: Google Analytics 4 (se abilitato)</h3>
+    <p>Fornitore: Google (Google Ireland Limited / Google LLC). Utilizziamo GA4 solo se hai acconsentito tramite banner. Esempi di cookie:</p>
+    <ul>
+      <li><code>_ga</code> — distingue gli utenti (scadenza tipica: 2 anni)</li>
+      <li><code>_ga_&lt;container-id&gt;</code> — persiste lo stato della sessione (2 anni)</li>
+      <li><code>_gid</code> — distingue gli utenti (24 ore, se presente)</li>
+    </ul>
+    <p>Informativa Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy</a> · <a href="https://policies.google.com/technologies/cokie</h2>
+  <p>I cookie non necessari (es. analytics) sono attivati solo dopo il tuo consenso tramite il banner. Se rifiuti, tali cookie non vengono impostati.</p>
+
+  <h2>Come gestire i cookie</h2>
+  <p>Puoi in ogni momento modificare le preferenze dal banner (se presente) o agire dalle impostazioni del browser per bloccare/eliminare i cookie:</p>
   <ul>
-    <li><strong>Fornire e mettere in sicurezza il sito</strong> — interesse legittimo (art. 6.1.f GDPR).</li>
-    <li class="analytics-block"><strong>Misurare e migliorare le performance (analytics)</strong> — consenso (art. 6.1.a GDPR).</li>
-    <li><strong>Rispondere a richieste</strong> — misure precontrattuali e/o interesse legittimo (art. 6.1.b/f GDPR).</li>
-  </ul>
-
-  <h2>Destinatari e trasferimenti</h2>
-  <p>Possiamo condividere dati con fornitori che agiscono per nostro conto (es. hosting, strumenti di misurazione, moduli). I dati possono essere trattati anche al di fuori dello SEE; in tal caso adottiamo garanzie adeguate (es. Clausole Contrattuali Standard). Consulta le informative dei fornitori per i dettagli.</p>
-
-  <h2>Conservazione</h2>
-  <ul>
-    <li>Log di hosting: in genere <em>30–180 giorni</em> (secondo le policy del provider).</li>
-    <li class="analytics-block">Record di analytics: fino a <em>14 mesi</em> (secondo le impostazioni dello strumento).</li>
-    <li>Comunicazioni: per il tempo necessario a gestire la tua richiesta.</li>
-  </ul>
-
-  <h2>Diritti degli interessati</h2>
-  <p>Hai i diritti previsti dagli artt. 15–22 GDPR (accesso, rettifica, cancellazione, limitazione, portabilità, opposizione) e il diritto di revocare il consenso in qualsiasi momento, senza pregiudicare la liceità del trattamento precedente. Puoi proporre reclamo al https://www.garanteprivacy.it/Garante per la protezione dei dati personali</a>.</p>
-
-  <h2>Cookie e analytics</h2>
-  <p>Per informazioni sui cookie e per gestire le preferenze di consenso, consulta la nostra cookiepolicy.htmCookie Policy</a>. Su questo sito (<span data-site="domain"></span>) gli strumenti di analytics sono attivati solo se esprimi il consenso tramite banner.</p>
+    <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Chrome</a></li>
+rg/kb/enable-and-disable-cookies-website-preferences" target="_blank" rel="noopener">Firefox</a></.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+.com/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Edge</aito e vuoi revocare il consenso, puoi cancellare i cookie del sito dal browser e/o usare il pulsante “Rivedi preferenze” se previsto dal banner.</p>
 
   <h2>Contatti</h2>
-  <p>Per questioni privacy scrivi a: <a href="mailto:privacy@oltresoftware.com" data-site="emaila></p>
-
-  <h2>Modifiche alla presente informativa</h2>
-  <p>Potremmo aggiornare il presente documento. La versione corrente è indicata in alto come “Ultimo aggiornamento”.</p>
+  <p>Per domande su questa Cookie Policy, consulta la nostra <a href="privacy.html">Informcy</a>.</p>
 </body>
 </html>
